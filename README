@@ -1,0 +1,16 @@
+Concurrent Fast NMF solver
+--------------------------
+
+Concurrent version of EPNMF. Finds non-negative factors W and H, of a non-negative matrix X so that 
+|| X - WH || (frobineus norm) is minimized. A new algorithm similar to the algorithm used in 
+Nandan et al. 2014 (JMLR) is used. 
+
+Instructions:
+
+1. Run make to compile.
+2. Call as $ ./EPNMF <input file in LibSVM format with X> R <desired file for W> <desired file for H>
+The last three parameters are optional. example (1) $ ./EPNMF ../data/mnist 20 w.dat h.dat
+										example (2) $ ./EPNMF ../data/mnist
+
+3. The output files are also in LibSVM/SVMlight format.
+4. The Frobenius norm error of each iteration is displayed.
